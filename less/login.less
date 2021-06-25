@@ -1,0 +1,84 @@
+.login-wrapper {
+    
+    .bg {
+        position: fixed;
+        background-color: #9ba4b4;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+    
+    .login-box {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 5;
+        margin: 50px auto;
+        max-width: 400px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .login-title {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        .form {
+            .form-field {
+                margin-bottom: 20px;
+                position: relative;
+                input{
+                    font-size: 14px;
+                    padding: 10px 0;
+                    border: none;
+                    border-bottom: solid 1px;
+                    background-color: transparent;
+                    width: 100%;
+                }
+                &.error{
+                    
+                    &::after{
+                        content: 'Fill this field';
+                        position: absolute;
+                        left: 0;
+                        color: red;
+                        font-size: 13px;
+                        bottom: -20px;
+                        
+                    }
+                }
+                
+            }
+            
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            a {
+                cursor: pointer;
+                margin-top: 15px;
+                font-size: 14px;
+            }
+
+            .btn{ 
+                background-color: #214252;
+                padding: 10px 30px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+            
+        }
+
+        .err-msg{
+            color: red;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    }
+}
