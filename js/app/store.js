@@ -4,14 +4,6 @@ const firebase = require('firebase/firebase');
 const Router = require('./router');
 Vue.use(Vuex);
  
-firebase.initializeApp({
-    apiKey: "AIzaSyDXFkrqNb8uaynnR4uJfBH8ziqBvrUV-l0",
-    authDomain: "cinema-a1d35.firebaseapp.com",
-    projectId: "cinema-a1d35",
-    storageBucket: "cinema-a1d35.appspot.com",
-    messagingSenderId: "156400857713",
-    appId: "1:156400857713:web:0b03fc9c431796cc86e1d0"
-});
 
 const db = firebase.firestore();
 
