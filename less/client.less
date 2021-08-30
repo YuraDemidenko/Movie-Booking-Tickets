@@ -1,3 +1,8 @@
+@primary-font: 'Saira Extra Condensed', sans-serif;
+
+body  {
+    background-color: black;
+}
 .client-container {
     
     .client{
@@ -7,30 +12,59 @@
             top: 0;
             left: 0;
             right: 0;
-            padding: 10px 50px;
-            background-color: #214252;
-            
+            background: #272727;
             .cinema-app-nav-bar {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin: 20px 80px;
                 .genre-filter{
-                    margin-right: 50px;
                     display: flex;
                     justify-content: flex-start;
                     .genre-filter-btn {
-                        margin: 0 50px;
-                        padding: 10px 20px;
-                        background-color: #03c4a1;
-                        border-radius: 5px;
+                        background: #4CD137;
+                        padding: 8px 45px;
+                        margin: 0 12px;
+                        border: none;
+                        border-radius: 10px;
+                        font-family: @primary-font;
+                        font-weight: bold;
+                        font-size: 20px;
+                        line-height: 31px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                        transition: .2s;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                         cursor: pointer;
+
+                        &:hover {
+                            opacity: .7;
+                        }
                     }
                 }
+                
                 .movie-search{
+                    position: relative;
+                    img {
+                        position: absolute;
+                        top: 10px;
+                        right: 20px;
+                    }
                     .search{
-                        border-radius: 5px;
-                        height: 30px;
-                        width: 250px;
+                        border-radius: 10px;
+                        background-color: #505050;
+                        height: 48px;
+                        width: 300px;
+                        border: none;
+                        font-family: @primary-font;
+                        font-weight: bold;
+                        font-size: 20px;
+                        line-height: 31px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                        transition: .2s;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                        cursor: pointer;
                     }
             
                 
@@ -39,33 +73,48 @@
         }
     
         .movie-promo{
-            padding-top: 58px;
+            padding-top: 90px;
             .movie-list{
                 display: flex;
                 justify-content: center;
                 
-                .list-wrapper{
-                    display: flex;
-                    justify-content: center;
-                    max-width: 1000px;
-                    flex-wrap: wrap;
+                .list-wrapper {
+                    width: 1122px;
+                    display: inline-block;
                     text-align: center;
-                    // height: 100vh;
+
+                    .movie-list-title {
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 72px;
+                        line-height: 113px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                        margin: 40px 0 50px;
+                    }
                     .promo-box{
+                        margin: 0 25px 25px;
                         display: inline-block;
-                        margin: 10px;
-                        cursor: pointer;
-                        .img{
-                            display: inline-block;
-                        }
                         .promo-title{
+                            img{
+                                width: 180px;
+                                height: 270px;
+                            }
                             p{
-                                text-align: center;
+                                font-family: @primary-font;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 20px;
+                                line-height: 31px;
+                                letter-spacing: 0.02em;
+                                color: #FFFFFF;
     
                             }
                         }
                     }
-                }   
+                }
+                
             }
         }
         
