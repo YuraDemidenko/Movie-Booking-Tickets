@@ -9,25 +9,32 @@
 </template>
 
 <style lang="less">
+
+    @primary-font: 'Saira Extra Condensed', sans-serif;
     .btn-wrapper{
         .btn-group {
             bottom: 0;
-            left: 0;
-            right: 0;
+            right: 200px;
             position: fixed;
+            z-index: 30;
             text-align: center;
             margin-bottom: 40px;
+            background-color: transparent;
             div {
                 display: inline-block;
-                a{
-                    background-color:   #214252;
-                    border-radius: 5px;
-                    padding: 12px 20px;
-                    margin: 10px;
+                a {
+                    background: #A55EEA;
+                    padding: 5px 52px;
+                    border: none;
+                    border-radius: 10px;
+                    font-family: @primary-font;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 31px;
+                    letter-spacing: 0.02em;
+                    color: #FFFFFF;
+                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                     cursor: pointer;
-                    color: white;
-                    font-size: 14px;
-
                 }
             }
             
