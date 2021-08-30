@@ -1,110 +1,259 @@
-.ticket-box{
-   
-    .promo-container {
-        .promo-ticket-wrapper {
+@primary-font: 'Saira Extra Condensed', sans-serif;
+
+.ticket-page{
+
+    
+
+    .ticket-page-bg {
+        text-align: center;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 4;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .ticket-page-overlay {
+            display: block;
             position: absolute;
-            margin: 100px auto;
             top: 0;
-            left: 0;
-            right: 0;
-            background-color: #e8e8e8;
-            max-width: 1000px;
-            user-select: none;
-            .discription {
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            box-shadow: 0px 4px 4px;
+            z-index: 15;
+        }
+    }
+
+
+
+   
+    .session-info-box {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .movies-info {
+            margin: 100px auto;
+            max-width: 1200px;
+            padding: 0 15px;
+            .movie-poster-wrapper {
                 display: flex;
-                
-                .poster {
-                    margin: 15px 20px 0 ;
+                justify-content: flex-start;
+                .session-poster {
+                    display: inline-block;
+                    
+                    img {
+                        width: 350px;
+                        height: 525px;
+                    }
                 }
                 
-                table{
-                    border-collapse: collapse;
-                    text-align: left;
-                    margin-top: 15px;
-                   
-                    td {
-                        padding: 0 10px 30px;
+                .session-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin: 0 25px;
+                    
+                    div > p {
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 30px;
+                        line-height: 47px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                    }
+
+                    .movie-title > p {
+                        font-size: 48px;
+                    }
+
+                    
+
+                    
+                    
+                }
+            }
+            .movie-discription {
+                margin: 56px 0;
+                p {
+                    font-family: @primary-font;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 30px;
+                    letter-spacing: 0.02em;
+                    color: #FFFFFF;
+                }
+            }
+
+            .places-box {               
+                background: #282828;
+                text-align: center;
+                padding: 44px;
+                border-radius: 10px;
+                .screen {
+                    display: inline-block;
+                    padding: 30px 440px;
+                    text-align: center;
+                    margin-bottom: 97px;
+                    background: #505050;
+                    
+
+                }
+
+                
+                .places-scheme {
+                    
+
+                    .row {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        .row-number {
+                            font-size: 30px;
+                            position: absolute;
+                            left: 190px;
+                            color: white;
+                        }
+                        
+                        
+
+                        .place {
+                            margin: 15px 20px 15px;
+                            display: block;
+                            height: 50px;
+                            width: 50px;
+                            background: #A55EEA;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            .place-number {
+                                font-family: @primary-font;
+                                font-weight: bold;
+                                font-size: 30px;
+                                color: transparent;
+                                
+                                &.active {
+                                    color: #FFFFFF;
+                                }
+                            }
+
+                            &.isReserved {
+                                background: #4CD137;
+                            }
+
+                            // &.isTaken {
+                            //     background: #383838;
+                            // }
+                        }
+                        
                     }
                     
                 }
-    
-    
             }
-    
-            .about-movie {
-                padding: 20px 150px 20px 20px;
-                border-bottom: solid 1px;
-                box-sizing: border-box;
 
-                .movie-discription {
-                    word-wrap: break-word;
-                }
-            }
-    
-            .hall-scheme{
+            .place-info-box {
+                margin-top: 17px;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                
-                .screen {
-                    margin: 50px;
-                    text-align: center;
-                    width: 500px;
-                    height: 20px;
-                    border-top: solid 2px;
+                justify-content: space-between;
+                .place-status {
+                    border-radius: 10px;
                     display: inline-block;
-                    border-radius: 100%;
-                    &::before {
-                        content: "screen";
-                        font-size: 20px;
-                    }
-                }
-                
-                table{
-                    border-collapse: collapse;
-                    margin: 0 30px 30px 30px;
-                    width: 500px;
-                    height: 300px;
-                    cursor: pointer;
+                    background: #282828;
+                    
+                    padding: 31px 38px 31px 55px;
+                    .color-anotation {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        .round {
+                            display: inline-block;
+                            border-radius: 50%;
+                            height: 55px;
+                            width: 55px;
+                            margin: 0 37px 0;
+                        }
     
-                    tbody{
-                        border-style: solid;
-                        text-align: center;
-                        .place{
-                            border-style: solid;
-    
-                            &:hover {
-                                background-color:rgb(126, 126, 126);
-    
-                            }
-    
-                            &.active{
-                                background-color:rgb(126, 126, 126);
-                            }
-    
+                        h3 {
+                            font-family: @primary-font;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 20px;
+                            line-height: 31px;
+                            color: white;
                         }
                     }
-    
                 }
-                
-                .buy-ticket-btn{
-                    background-color: #03c4a1;
-                    text-align: center;
-                    width: 200px;
-                    padding: 10px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    margin-bottom: 150px;
 
-                    &:hover {
-                        opacity: .7;
+                .bought-tickets {
+                    display: inline-block;
+                    background: #282828;
+                    width: 54%;
+                    padding: 38px 45px 18px;
+                    border-radius: 10px;
+                    .basket-box {
+
+                        .basket-title {
+                            font-family: @primary-font;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 24px;
+                            color: white;
+                            line-height: 38px;
+                            letter-spacing: 0.02em;
+                            border-bottom: solid 3px #505050;
+                            margin: 0 0 88px;
+                            padding-bottom: 12px;
+                            
+                        }
+                        .total-summ {
+                            display: flex;
+                            justify-content: space-between;
+                            
+                            .summ-title {
+                                font-family: @primary-font;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 24px;
+                                color: white;
+                                line-height: 38px;
+                                letter-spacing: 0.02em;
+                                
+                            }
+                            .buy-btn {
+                                background: #4CD137;
+                                padding: 12px 82px;
+                                border: none;
+                                border-radius: 10px;
+                                font-family: @primary-font;
+                                font-weight: bold;
+                                font-size: 20px;
+                                line-height: 31px;
+                                letter-spacing: 0.02em;
+                                color: #FFFFFF;
+                                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                cursor: pointer;
+                                transition: .2s;
+                                &:hover {
+                                    opacity: .7;
+                                }
+                            }
+                        }
                     }
-                }       
+                }
             }
         }
-
     }
+    
 
    
 
