@@ -2,12 +2,13 @@
 
     <div class="admin">
 
-        <div class="movie-form">
+        <div class="left-bar">
 
             <div class="form-box">
+
                 <h1>Movie Form</h1>
 
-                <div class="wrapper-box">
+                <form class="wrapper-box">
                     <input type="text" class="title field" placeholder="Enter Title" v-model="movie.title">
                     <input type="text" class="genre" placeholder="Enter Genre" v-model="movie.genre">
                     <input type="text" class="price" placeholder="Enter Price" v-model="movie.price">
@@ -17,19 +18,20 @@
                     <input type="text" class="duration" placeholder="Enter Movie Duraton" v-model="movie.duration">
                 
                     <textarea class="discription" placeholder="Enter Movie Discription" v-model="movie.discription"></textarea>
-                    <div class="add-movie-btn" v-on:click="addMovie">Add movie</div>
-                </div>
+                    
+                    <button class="add-movie-btn" v-on:click="addMovie">Add movie</button>
+                </form>
 
             </div>
         </div>
 
-        <div class="table-box">
+        <div class="right-bar">
 
-            <div class="bg" style="background-color: #9ba4b4"></div>
+            <div class="table-box">
 
-            <div class="table">
-                
-                <table>
+                <h1>Movies</h1>
+
+                <table class="movies-info-table">
                     <thead>
                         <tr>
                             <th>№</th>
@@ -112,6 +114,9 @@
                             {place: 3, isReserved: false},
                             {place: 4, isReserved: false},
                             {place: 5, isReserved: false},
+                            {place: 6, isReserved: false},
+                            {place: 7, isReserved: false},
+                            {place: 8, isReserved: false},
                         ],
                         '2': [
                             {place: 1, isReserved: false},
@@ -119,6 +124,11 @@
                             {place: 3, isReserved: false},
                             {place: 4, isReserved: false},
                             {place: 5, isReserved: false},
+                            {place: 6, isReserved: false},
+                            {place: 7, isReserved: false},
+                            {place: 8, isReserved: false},
+                            {place: 9, isReserved: false},
+                            {place: 10, isReserved: false},
                         ],
                         '3': [
                             {place: 1, isReserved: false},
@@ -126,6 +136,11 @@
                             {place: 3, isReserved: false},
                             {place: 4, isReserved: false},
                             {place: 5, isReserved: false},
+                            {place: 6, isReserved: false},
+                            {place: 7, isReserved: false},
+                            {place: 8, isReserved: false},
+                            {place: 9, isReserved: false},
+                            {place: 10, isReserved: false},
                         ],
                         '4': [
                             {place: 1, isReserved: false},
@@ -133,6 +148,11 @@
                             {place: 3, isReserved: false},
                             {place: 4, isReserved: false},
                             {place: 5, isReserved: false},
+                            {place: 6, isReserved: false},
+                            {place: 7, isReserved: false},
+                            {place: 8, isReserved: false},
+                            {place: 9, isReserved: false},
+                            {place: 10, isReserved: false},
                         ],
                         '5': [
                             {place: 1, isReserved: false},
@@ -140,6 +160,11 @@
                             {place: 3, isReserved: false},
                             {place: 4, isReserved: false},
                             {place: 5, isReserved: false},
+                            {place: 6, isReserved: false},
+                            {place: 7, isReserved: false},
+                            {place: 8, isReserved: false},
+                            {place: 9, isReserved: false},
+                            {place: 10, isReserved: false},
                         ],
                     }
                         
@@ -183,6 +208,19 @@
                 this.$store.dispatch('editMovie', this.selectedMovie);
                 this.isModalOpen = false;
             },
+        },
+
+        mounted: function(){
+
+            // document.getElementById('image').addEventListener('input', function(e) {
+            //     let image = e.target.files[0];
+
+            //     console.log(image);
+            //     this.$store.dispatch('imageUp', image)
+
+            // }.bind(this))
+
+            // this.$store.dispatch('getPath');
         },
         
         computed:{
