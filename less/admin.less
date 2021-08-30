@@ -1,56 +1,116 @@
+@primary-font: 'Saira Extra Condensed', sans-serif;
+
 .admin {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    h1{
+        font-family: @primary-font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 113px;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    }
     
-    .movie-form {
+    .left-bar {
         position: fixed;
         top: 0;
         bottom: 0;
-        width: 30%;
-        background-color: #214252;
+        width: 40%;
+        background-color:  #272727;
         text-align: center;
         box-sizing: border-box;
         
         .form-box {  
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            margin-top: 100px;
+            margin-top: 50px;
             
-            h1{
-                font-size: 22px;
-                color: white;
-            }
+            
             .wrapper-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 70px;
+                
+
                 input{
-                    width: 350px;
-                    margin: 10px 0;
-                    height: 30px;
-                    border-radius: 5px;
-                    border-style: none;
-                    outline: none;
+                    font-family: @primary-font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #FFFFFF;
+                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    background: #505050;
+                    border-radius: 10px;
                     text-align: left;
+                    padding: 12px 0 12px 15px;
+                    border: none;
+                    &::placeholder {
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #FFFFFF;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
                 }
+
+                
+
+
                 textarea{
-                    margin-top: 20px;
-                    width: 350px;
-                    resize: none;
-                    border-radius: 5px;
+                    background: #505050;
+                    border-radius: 10px;
+                    text-align: left;
                     height: 100px;
-                    outline: none;
-                    border-style: none;
+                    padding: 12px 0 12px 15px;
+                    border: none;
+                    margin-bottom: 15px;
+                    resize: none;
+                    font-family: @primary-font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #FFFFFF;
+
+                    &::placeholder {
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #FFFFFF;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
                 }
 
                 .add-movie-btn{
-                    background-color: #03c4a1;
-                    width: 350px;
-                    margin: 30px auto;
-                    padding: 10px;
-                    opacity: .7;
+                    display: block;
+                    border: none;
+                    background-color: #A55EEA;
+                    border-radius: 10px;
+                    padding: 16px 0;
+                    font-family: @primary-font;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 31px;
+                    letter-spacing: 0.02em;
                     cursor: pointer;
-                    border-radius: 5px;
+                    color: #FFFFFF;
+                    transition: .2s;
+                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
                     &:hover {
-                        opacity: 1;
+                        opacity: .7;
                     }
                 }
             }
@@ -59,29 +119,107 @@
         
     }
     
-    .table-box{
-        margin-left: 30%;
-        min-height: 100vh;
-        background-color: #9ba4b4;
-       
-        .table{
-            padding: 150px;
-            
-            table{
-                min-width: 700px;
+    .right-bar {
+        position: fixed;
+        overflow-y: hidden;
+        margin-left: 40%;
+        background-color: black;
+        box-sizing: border-box;
+        width: 60%;
+        top: 0;
+        bottom: 0;
+        .table-box{
+            margin: 50px auto;
+            padding: 0 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            .movies-info-table {
+                display: block;
+                border-radius: 10px;
                 border-collapse: collapse;
                 text-align: center;
-                th{
-                    border-style: solid;
+                color: white;
+               
+                th{ 
+                    border-style: none;
+                    background-color: #282828;
+                    font-family: @primary-font;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 30px;
+                    line-height: 47px;
+                    letter-spacing: 0.02em;
+                    color: #FFFFFF;
+                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    
+                   
+                }
+
+               
+                th:nth-child(1) {border-radius: 10px 0 0 0;}
+                th:nth-child(7) {border-radius: 0 10px 0 0;}
+
+                tr:nth-child(2n) {
+                    td:nth-child(-n+7) {
+                        background-color: #373737;
+                        text-align: left;
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 26px;
+                        line-height: 41px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                        padding: 5px 20px;
+                        
+                    }
+                }
+
+
+                tr:nth-child(2n-1) {
+                    td:nth-child(-n+7) {
+                        background-color: #505050;
+                        text-align: left;
+                        font-family: @primary-font;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 26px;
+                        line-height: 41px;
+                        letter-spacing: 0.02em;
+                        color: #FFFFFF;
+                        padding: 5px 20px;
+                        
+
+                    }
                     
                 }
+
+                tr:last-child {
+                    td:first-child {
+                        border-radius: 0 0 0 10px;
+                        
+                    }
+                    td:nth-child(7) {
+                        border-radius: 0 0 10px 0;
+                        
+                    }
+                    
+                }
+               
                 td{
-                    border-style: solid;
+                    border-style: none;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    max-width: 150px;
+                    
+                    
                     i{
                         padding: 5px 10px;
                         cursor: pointer;
                     }
                 }
+                
                 .close{
                     border: none;
                 }
