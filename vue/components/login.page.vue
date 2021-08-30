@@ -1,7 +1,8 @@
 <template >
     <div class="login-wrapper" v-if="!isLogedIn">
         
-        <div class="bg"></div>
+        <div class="login-page-bg"></div>
+        <div class="login-page-overlay"></div>
 
         <transition name="slide">
             <div class="login-box" v-if="!isRegistrated">
@@ -10,7 +11,7 @@
                 <p class="err-msg" v-if="invalidPassword">Invalid Password</p>
                 <div class="form">
                     <div class="form-field" :class="{'error': emptyLoginForm && !user.login.length}">
-                        <input type="email" placeholder="Enter Your Email" v-model="user.login">
+                        <input type="email" placeholder="Enter Your Login" v-model="user.login">
                     </div>
                     <div class="form-field" :class="{'error': emptyLoginForm && !user.password.length}">
                         <input type="password" placeholder="Enter Your Password" v-model="user.password">
@@ -30,7 +31,7 @@
                 <p class="err-msg" v-if="loginIsAlreadyExist">Login is already exist</p>
                 <div class="form">
                     <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
-                        <input type="email" placeholder="Enter Your Email" v-model="reg.login">
+                        <input type="email" placeholder="Enter Your Login" v-model="reg.login">
                     </div>
                     <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
                         <input type="password" placeholder="Enter Your Password" v-model="reg.password">
@@ -91,7 +92,6 @@
             isLogedIn: function() {
                 return this.$store.getters['isLogedIn'];
             }
-
         },
 
         methods: {
