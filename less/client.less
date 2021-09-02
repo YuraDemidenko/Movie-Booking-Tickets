@@ -2,7 +2,17 @@
 
 
 .client-container {
-     background-color: black;
+    // background-color: black;
+
+    .client-page-bg {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+    }
+    
     .client{
         
         .cinema-app-header {
@@ -11,6 +21,7 @@
             left: 0;
             right: 0;
             background: #272727;
+            z-index: 10;
             .cinema-app-nav-bar {
                 display: flex;
                 justify-content: space-between;
@@ -72,14 +83,15 @@
     
         .movie-promo{
             padding-top: 90px;
+            position: absolute;
+            width: 100%;
             .movie-list{
-                display: flex;
-                justify-content: center;
+                text-align: center;
                 
                 .list-wrapper {
                     width: 1122px;
                     display: inline-block;
-                    text-align: center;
+                    
 
                     .movie-list-title {
                         font-family: @primary-font;
