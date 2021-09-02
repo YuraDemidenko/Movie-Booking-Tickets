@@ -60,17 +60,12 @@
                             <span class="round" style="background: #4CD137"></span>
                             <h3>Вы выбрали это место </h3>
                         </div>
-                        <!-- <div class="color-anotation">
-                            <span class="round" style="background: #383838"></span>
-                            <h3>Место занято</h3>
-                        </div> -->
                     </div>
 
                     <div class="bought-tickets">
                         <div class="basket-box">
                             <div class="basket-title">Мои билеты</div>
                             <div class="total-summ">
-                                <!-- <div class="summ-title">Итого: 200грн</div> -->
                                 <div class="summ-title">Will see you in Theatre</div>
                                 <button class="buy-btn" @click="buyTicket">Buy Ticket</button>
                             </div>
@@ -103,9 +98,7 @@
             },
 
             buyTicket: function() {
-                // this.$router.push({name: 'client'});
-
-                console.log(this.movie.price);
+                this.$router.push({name: 'client'});
             }
         },
         
@@ -115,9 +108,6 @@
             movie: function() {
                 return this.$store.getters['selectedMovie'];
             },
-            // movies: function() {
-            //     return this.$store.getters['movies'];
-            // },
 
         },
         
