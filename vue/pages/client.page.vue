@@ -1,6 +1,9 @@
 <template v-if="isLogedIn">
 
     <div class="client-container">
+
+        <div class="client-page-bg"></div>
+
         <div class="client">
             <div class="cinema-app-header">
                 <div class="cinema-app-nav-bar">
@@ -19,20 +22,19 @@
             </div>
 
             <div class="movie-promo">
+
                 <div class="movie-list">
                     <div class="list-wrapper" v-if="filteredMovies.length">
 
                         <h2 class="movie-list-title">Movies</h2>
 
                         <router-link :to="{name: 'ticket-page'}">
-                            <transition-group name="scale">
-                                <div class="promo-box" v-for="(movie, index) in filteredMovies" :key="index" v-on:click="getMovie(movie)">
-                                    <div class="promo-title">
-                                        <img :src="movie.poster">
-                                        <p>{{movie.title}}</p>
-                                    </div>
+                            <div class="promo-box" v-for="(movie, index) in filteredMovies" :key="index" v-on:click="getMovie(movie)">
+                                <div class="promo-title">
+                                    <img :src="movie.poster">
+                                    <p>{{movie.title}}</p>
                                 </div>
-                            </transition-group>
+                            </div>
                         </router-link>
                         
                     </div>
@@ -44,18 +46,7 @@
 </template>
 
 <style lang="less">
-    .scale-enter-active, .scale-leave-active {
-        transition: all 0.3s;
-        transform: none;
-    }
-    .scale-leave, .scale-enter-to {
-        opacity: 1;
-        transform: scale(1);
-    }
-    .scale-leave-to, .scale-enter {
-        opacity: 0;
-        transform: scale(0.5);
-    }
+   
 </style>
 
 
