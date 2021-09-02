@@ -4,60 +4,46 @@
         <div class="login-page-bg"></div>
         <div class="login-page-overlay"></div>
 
-        <transition name="slide">
-            <div class="login-box" v-if="!isRegistrated">
-                <h2 class="login-title">Login</h2>
-                <p class="err-msg" v-if="invalidLogin">Invalid Login</p>
-                <p class="err-msg" v-if="invalidPassword">Invalid Password</p>
-                <div class="form">
-                    <div class="form-field" :class="{'error': emptyLoginForm && !user.login.length}">
-                        <input type="email" placeholder="Enter Your Login" v-model="user.login">
-                    </div>
-                    <div class="form-field" :class="{'error': emptyLoginForm && !user.password.length}">
-                        <input type="password" placeholder="Enter Your Password" v-model="user.password">
-                    </div>
-                    <div class="actions">
-                        <a class="form-link" @click="isRegistrated = true">Haven't an account? Just Register</a>
-                        <button class="btn" @click="login">Login</button>
-                        <!-- <button class="btn" @click="resetPassword">Reset</button> -->
-                    </div>
-                </div>  
-            </div>
-        </transition>
+        <div class="login-box" v-if="!isRegistrated">
+            <h2 class="login-title">Login</h2>
+            <p class="err-msg" v-if="invalidLogin">Invalid Login</p>
+            <p class="err-msg" v-if="invalidPassword">Invalid Password</p>
+            <div class="form">
+                <div class="form-field" :class="{'error': emptyLoginForm && !user.login.length}">
+                    <input type="email" placeholder="Enter Your Login" v-model="user.login">
+                </div>
+                <div class="form-field" :class="{'error': emptyLoginForm && !user.password.length}">
+                    <input type="password" placeholder="Enter Your Password" v-model="user.password">
+                </div>
+                <div class="actions">
+                    <a class="form-link" @click="isRegistrated = true">Haven't an account? Just Register</a>
+                    <button class="btn" @click="login">Login</button>
+                    <!-- <button class="btn" @click="resetPassword">Reset</button> -->
+                </div>
+            </div>  
+        </div>
 
-        <transition name="slide">
-            <div class="login-box" v-if="isRegistrated">
-                <h2 class="login-title">Registration</h2>
-                <p class="err-msg" v-if="loginIsAlreadyExist">Login is already exist</p>
-                <div class="form">
-                    <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
-                        <input type="email" placeholder="Enter Your Login" v-model="reg.login">
-                    </div>
-                    <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
-                        <input type="password" placeholder="Enter Your Password" v-model="reg.password">
-                    </div>
-                    <div class="actions">
-                        <a class="form-link" @click="isRegistrated = false">Back to login</a>
-                        <button class="btn" @click="registration()">Registration</button>
-                    </div>
+        <div class="login-box" v-if="isRegistrated">
+            <h2 class="login-title">Registration</h2>
+            <p class="err-msg" v-if="loginIsAlreadyExist">Login is already exist</p>
+            <div class="form">
+                <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
+                    <input type="email" placeholder="Enter Your Login" v-model="reg.login">
+                </div>
+                <div class="form-field" :class="{'error': emptyRegForm && !reg.login.length}">
+                    <input type="password" placeholder="Enter Your Password" v-model="reg.password">
+                </div>
+                <div class="actions">
+                    <a class="form-link" @click="isRegistrated = false">Back to login</a>
+                    <button class="btn" @click="registration()">Registration</button>
                 </div>
             </div>
-        </transition>
+        </div>
+        
 
     </div>
 </template>
 
-<style lang="less">
-
-    .slide-enter-active, .slide-leave-active {
-        transition: all .5s;
-        opacity: 1;
-    }
-    .slide-enter, .slide-leave-to {
-        opacity: 0;
-    }
-
-</style>
 
 <script>
     module.exports = {
