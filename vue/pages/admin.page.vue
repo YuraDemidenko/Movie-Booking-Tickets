@@ -2,6 +2,8 @@
 
     <div class="admin">
 
+        <div class="admin-bg"></div>
+
         <div class="left-bar">
 
             <div class="form-box">
@@ -9,7 +11,7 @@
                 <h1>Movie Form</h1>
 
                 <form class="wrapper-box">
-                    <input type="text" class="title field" placeholder="Enter Title" v-model="movie.title">
+                    <input type="text" class="title-feild" placeholder="Enter Title" v-model="movie.title">
                     <input type="text" class="genre" placeholder="Enter Genre" v-model="movie.genre">
                     <input type="text" class="price" placeholder="Enter Price" v-model="movie.price">
                     <input type="text" class="poster" placeholder="Enter Poster url" v-model="movie.poster">
@@ -175,7 +177,19 @@
         methods: {
             addMovie: function(){
                 this.$store.dispatch('setMovie', this.movie);
+                this.movie.title = '';
+                this.movie.genre = '';
+                this.movie.poster = '';
+                this.movie.date = '';
+                this.movie.beginOfsession = '';
+                this.movie.price = '';
+                this.movie.discription = '';
+                this.movie.duration = '';
+                
+                
             },
+
+            
 
             deleteMovie: function(item) {
                 this.$store.dispatch('deleteMovie', item);
@@ -210,19 +224,6 @@
             },
         },
 
-        mounted: function(){
-
-            // document.getElementById('image').addEventListener('input', function(e) {
-            //     let image = e.target.files[0];
-
-            //     console.log(image);
-            //     this.$store.dispatch('imageUp', image)
-
-            // }.bind(this))
-
-            // this.$store.dispatch('getPath');
-        },
-        
         computed:{
             movies: function() {
                 return this.$store.getters['movies'];  
